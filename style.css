@@ -24,7 +24,7 @@ body {
 #container {
   min-height: 100vh;
   display: grid;
-  grid-template-areas: 'header header header header header' 'main main main main aside' 'footer footer footer footer footer';
+  grid-template-areas: 'header header header header header header' 'main main main main aside 1fr' 'footer footer footer footer footer footer';
   gap: 20px;
 }
 
