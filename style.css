@@ -1,4 +1,178 @@
-html {
-  height: 100%;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* 
+Um layout com grid que contenha um cabeçalho, um menu principal, um feed de postagens de amigos, uma área com a relação de amigos e uma área com a relação de sugestões de amizade.
+As postagem de amigos deve conter uma imagem, um título, um texto, uma data de publicação, o autor da postagem, a quantidade de curtidas, a quantidade de compartilhamentos e uma lista de comentários.
+A relação de amigos deve apresentar a foto, o nome e a quantidade de amigos em comum.
+A relação de sugestões deve apresentar a foto, o nome e um amigo em comum entre você e a sugestão apresentada.
+O footer deve deve ocupar toda a largura do viewport. Sua altura deve ocupar 15% O layout e o estilo da página fica a seu critério. */
+
+html,
+body {
+  max-width: 100%;
+  max-height: 100%;
+  box-sizing: border-box;
+  /* overflow-x: hidden; */
+}
+
+#container {
+  min-height: 100vh;
+  display: grid;
+  grid-template-areas: 'header header header header header' 'main main main main aside' 'footer footer footer footer footer';
+  gap: 20px;
+}
+
+/* #content {
+  min-height: calc(100vh - 15vh);
+} */
+
+header {
+  grid-area: header;
+  background-image: linear-gradient(to bottom right, #fbdbd5, #eedbff);
+  height: 12vh;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   width: 100%;
+  height: 100%;
+}
+
+.svg-flex {
+  display: flex;
+  align-items: center;
+}
+
+.svg-flex:link,
+.svg-flex:visited,
+.svg-flex:active,
+.links a:link,
+.links a:visited,
+.links a:active {
+  color: inherit;
+  text-decoration: none;
+}
+
+.links {
+  display: flex;
+  gap: 35%;
+  justify-content: center;
+  align-items: center;
+  overflow-wrap: normal;
+}
+
+main {
+  grid-area: main;
+  width: 50%;
+  height: fit-content;
+  border-radius: 5px;
+  margin: auto auto;
+}
+
+.post {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  padding: 5px;
+  border-radius: 10px;
+  background-image: linear-gradient(to left, #fefefe, #f2f2f2);
+}
+
+.info-adicional {
+  padding: 10px 30px;
+}
+
+.info-post {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  width: 100%;
+  padding: 10px 30px;
+}
+
+.nome-img {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.img-post {
+  align-self: center;
+  border-radius: 5px;
+  width: 80% !important;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  background-color: #ededed;
+  font-weight: bold;
+  border-radius: 10px;
+  flex-wrap: wrap;
+  overflow-wrap: anywhere;
+}
+
+.actions-individual {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+aside {
+  grid-area: aside;
+  background-image: linear-gradient(to bottom right, #fbdbd5, #eedbff);
+  height: fit-content;
+  border-radius: 10px;
+  width: 100%;
+  text-align: center;
+  padding-top: 10px;
+}
+
+aside>section>div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  gap: 20px;
+}
+
+.profile-picture {
+  border-radius: 20px;
+}
+
+footer {
+  /* This approach of vertically aligning text only works for a single line of text. */
+  grid-area: footer;
+  background-color: black;
+  width: 100%;
+  height: 15vh;
+  line-height: 15vh;
+  text-align: center;
+  color: #FFFFFF;
+  /* margin-bottom: -10px; */
+}
+
+@media screen and (max-width: 790px) {
+
+  .actions {
+    justify-content: flex-start;
+    padding: 8px;
+  }
+
+  .links {
+    font-size: 9px;
+  }
+
 }
